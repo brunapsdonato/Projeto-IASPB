@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3"> Lista de Voluntários</span>
+            <button class="btn btn-dark btn-Ig float-end" routerLink="/create-volunteer">Adicionar</button>
+            <table class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Contato</th>
+                    <th scope="col">Função</th>
+                    <th scope="col">Ação</th>
+                  </tr>
+                </thead>
+              <tbody>
+              <tr *ngFor="let voluntario of listaDeVoluntarios">
+                <td>{{voluntario.nome}}</td>
+                <td>{{voluntario.dataNasc}}</td>
+                <td>{{voluntario.contato}}</td>
+                <td>{{voluntario.funcao}}</td>
+                <td>
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" (click)="deletarVoluntario(voluntario.id)" class="btn btn-danger">Excluir</button>
+                    <button type="button"  class="btn btn-warning">Editar</button>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>

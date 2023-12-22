@@ -1,0 +1,28 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Criar Usuário</h3>
+                    <span *ngIf="submitted && criarUsuario.invalid" class="badge badge-danger">Todos os campos são obrigatórios</span>
+                    <form class="mt-4" [formGroup]="criarUsuario" (ngSubmit)="adicionarUsuario()">
+                        <div class="row">
+                            <div class="col" >
+                                <input type="text" class="form-control form-control-lg mt-3" formControlName="nome" placeholder="Nome">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg mt-3" formControlName="dataNasc" placeholder="Data de Nascimento">
+                            </div>
+                        </div>
+                       <input type="text" class="form-control form.control-lg mt-3" formControlName="Documento" placeholder ="CPF">
+                       <input type="text" class="form-control form.control-lg mt-3" formControlName="servicoUtilizado" placeholder ="Serviço Utilizado">
+                       <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg btn-block " routerLink="/list-users">Cancelar</button>
+                            <button type="submit" class="btn btn-dark btn-lg btn-block">Confirmar</button>
+                       </div>
+                    </form>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>

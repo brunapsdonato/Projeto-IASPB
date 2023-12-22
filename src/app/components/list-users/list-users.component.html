@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3"> Lista de Usuários</span>
+            <button class="btn btn-dark btn-Ig float-end" routerLink="/create-user">Adicionar</button>
+            <table class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Serviço Utilizado</th>
+                    <th scope="col">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let usuario of listaDeUsuarios">
+                    <td>{{usuario.nome}}</td>
+                    <td>{{usuario.dataNasc}}</td>
+                    <td>{{usuario.Documento}}</td>
+                    <td>{{usuario.servicoUtilizado}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" (click)="deletarUsuario(usuario.id)" class="btn btn-danger">Excluir</button>
+                            <button type="button"  class="btn btn-warning">Editar</button>
+                        </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
